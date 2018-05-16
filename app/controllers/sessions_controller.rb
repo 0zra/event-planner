@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     if @user = User.find_by(name: params[:session][:name])
         flash[:login] = "Welcome #{@user.name}"
         sign_in(@user)
-        redirect_to new_user_path
+        redirect_to @user
     else
         flash.now[:login] = "No such user"
         render 'new'

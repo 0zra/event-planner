@@ -1,2 +1,8 @@
 <h1>Users#show</h1>
 <%= @user.name%>
+<br>---------------------------------------------------
+<br>
+<%  @user.events.each_with_index do |event,number|%>
+<%="Event number #{number+1}) #{event.name}"%> <br>
+<%end%>
+<br>
