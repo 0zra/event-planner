@@ -1,8 +1,12 @@
-<h1>Users#show</h1>
-<%= @user.name%>
+<h1><%= @user.name%></h1>
+
 <br>---------------------------------------------------
 <br>
 <%  @user.events.each_with_index do |event,number|%>
-<%="Event number #{number+1}) #{event.name}"%> <br>
+  <%="Event number #{number+1}) #{event.name}"%> <br>
+<%end%>
+<h2>Events <%= @user.name%> is attending</h2>
+<%  @user.attendments.each_with_index do |attendment,number|%>
+  <%="Event number #{number+1}) #{attendment.event.name}"%> <br>
 <%end%>
 <br>
